@@ -7,6 +7,9 @@
       <div class="actions">
         <slot name="links"></slot>
       </div>
+      <div class="slot-two">
+        <slot name="links-two"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -44,13 +47,15 @@ export default {
   color: #333;
 }
 
-.modal .actions {
+.modal .actions,
+.slot-two {
   text-align: center;
   margin: 30px 0 10px 0;
   /* background: red; */
 }
 
-.modal .actions a {
+.modal .actions a,
+.slot-two a {
   color: #333;
   padding: 8px;
   border: 1px solid #eee;

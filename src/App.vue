@@ -20,7 +20,20 @@
       </template>
     </Modal>
   </div>
+
+  <div v-if="showModalTwo">
+    <Modal :header="headerTwo" :text="textTwo" @close="toggleModalTwo">
+      <template v-slot:links-two>
+        <a href="#">Just Click</a>
+        <a href="#">Click me</a>
+      </template>
+    </Modal>
+  </div>
+
   <button @click.alt="toggleModal">Open Modal -(alt)</button>
+
+  <!-- for modalTwo -->
+  <button @click="toggleModalTwo">Open Modal-two</button>
 </template>
 
 <script>
@@ -36,6 +49,9 @@ export default {
       title: "My First Vue App :)",
       header: "Sign up here",
       showModal: false,
+      headerTwo: "Modal Two",
+      textTwo: "Just doing my challenge",
+      showModalTwo: false,
     };
   },
   methods: {
@@ -45,6 +61,9 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
     },
   },
 };
